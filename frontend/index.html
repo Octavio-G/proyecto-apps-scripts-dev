@@ -14,14 +14,26 @@
 </body>
 
 <components style="display: none;">
+<!-- importaciones -->
 
-<?!= include('frontend/config/constantesCdn') ?>
+  <!-- constantes -->
+  <?!= include('frontend/config/constantesCdn') ?>
+
+  <!-- rutas -->
+  <?!= include('frontend/routes/Routes') ?>
 
 
-<?!= include('frontend/routes/Routes') ?>
 
 
-<?!= include('frontend/App') ?>
+  <!-- vistas -->
+  <?!= include('frontend/views/Inicio') ?>
+  <?!= include('frontend/components/Header') ?>
+  <?!= include('frontend/views/formularios/FormularioRegistro') ?>
+
+
+
+  <!-- componente raiz -->
+  <?!= include('frontend/App') ?>
 </components>
 
 </html>
