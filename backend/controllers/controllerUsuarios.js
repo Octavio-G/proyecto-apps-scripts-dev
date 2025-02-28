@@ -23,3 +23,23 @@ function listarUsuarios(id = undefined){
     //return obtenerDatos(env_().SH_REGISTRO_USUARIOS);
     return JSON.stringify(_read(obtenerSheet(env_().SH_REGISTRO_USUARIOS), id));
 }
+
+function actualizarUsuario(id, datos){
+    try {
+        // const{ id, nombreCompleto, correo, contrasenia } = usuario;
+        const sheetUsuarios = obtenerSheet(env_().SH_REGISTRO_USUARIOS);
+        Update(id, datos, sheetUsuarios);
+        //sheetUsuarios.appendRow([id, nombreCompleto, correo, contrasenia]);
+        return {
+            titulo: "Actualizacion exitosa :)",
+            descripcion: "Ya se actualizo el usuario."
+        };
+    } catch (error) {
+        return{
+            titulo: "Ops ha ocurrido un error! "+ error,
+            descripcion: "Porfavor contacte a soporte."
+        };
+    }
+    
+
+}
